@@ -1,4 +1,5 @@
 import {Composition} from 'remotion';
+import './style.css';
 import {MyComposition} from './Composition';
 
 export const RemotionRoot = () => (
