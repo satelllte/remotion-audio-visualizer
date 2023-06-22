@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "remotion preview",
-    "render": "remotion render MyComp out/video.mp4",
+    "render": "remotion render Main out/video.mp4",
     "upgrade": "remotion upgrade",
     "test": "xo && tsc"
   },
