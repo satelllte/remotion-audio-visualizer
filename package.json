@@ -2,8 +2,8 @@
   "name": "remotion-audio-visualizer",
   "version": "0.1.0",
   "scripts": {
-    "start": "remotion preview",
-    "build": "remotion render MyComp out/video.mp4",
+    "dev": "remotion preview",
+    "render": "remotion render MyComp out/video.mp4",
     "upgrade": "remotion upgrade",
     "test": "xo && tsc"
   },
