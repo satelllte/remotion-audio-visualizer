@@ -1,0 +1,12 @@
+extends:
+  - '@remotion'
+  - 'plugin:@remotion/recommended'
+  - 'xo'
+  - 'xo-react'
+  # - 'xo-typescript' # Wait until error with `@typescript-eslint/consistent-type-imports` resolved
+  - 'plugin:react/jsx-runtime' # Prevents "'React' must be in scope when using JSX" errors
+rules:
+  'react/function-component-definition':
+    - 'error'
+    - namedComponents: 'arrow-function'
+      unnamedComponents: 'arrow-function'
