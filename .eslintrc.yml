@@ -3,7 +3,7 @@ extends:
   - 'plugin:@remotion/recommended'
   - 'xo'
   - 'xo-react'
-  # - 'xo-typescript' # Wait until error with `@typescript-eslint/consistent-type-imports` resolved
+  # - 'xo-typescript' # Wait until error with `@typescript-eslint/consistent-type-imports` resolved (conflicts with Remotion for some reason)
   - 'plugin:react/jsx-runtime' # Prevents "'React' must be in scope when using JSX" errors
 rules:
   'react/function-component-definition':
