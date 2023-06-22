@@ -1,4 +1,4 @@
-import {type Config} from 'tailwindcss'; // eslint-disable-line import/no-extraneous-dependencies
+import {type Config} from 'tailwindcss';
 
 const config = {
 	content: ['./src/**/*.{ts,tsx}'],

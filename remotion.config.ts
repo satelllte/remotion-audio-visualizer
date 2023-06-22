@@ -1,5 +1,5 @@
 import {Config} from 'remotion';
-import {enableTailwind} from '@remotion/tailwind'; // eslint-disable-line import/no-extraneous-dependencies
+import {enableTailwind} from '@remotion/tailwind';
 
 Config.setImageFormat('jpeg');
 Config.setOverwriteOutput(true);
