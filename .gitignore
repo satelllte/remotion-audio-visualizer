@@ -1,11 +1,12 @@
-node_modules
-dist
-.DS_Store
-.env
+# Node.js
+/node_modules
 
-# Ignore the output video from Git but not videos you import into src/.
-out
+# Renders
+/out
 
 # Editors
 .vscode
 .idea
+
+# OS-specific
+.DS_Store
