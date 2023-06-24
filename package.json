@@ -11,7 +11,7 @@
     "@remotion/cli": "3.3.101",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "remotion": "3.3.101"
+    "remotion": "3.3.102"
   },
   "devDependencies": {
     "@remotion/eslint-config": "3.3.101",
