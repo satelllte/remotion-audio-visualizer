@@ -8,7 +8,7 @@
     "test": "xo && tsc"
   },
   "dependencies": {
-    "@remotion/cli": "3.3.101",
+    "@remotion/cli": "3.3.102",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "remotion": "3.3.101"
