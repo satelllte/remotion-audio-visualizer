@@ -4,10 +4,9 @@
   "scripts": {
     "dev": "remotion preview",
     "render": "remotion render Main out/video.mp4",
-    "upgrade": "remotion upgrade",
     "test:lint": "eslint src --ext=.ts,.tsx --max-warnings=0 --format=compact",
     "test:types": "tsc",
-    "deps:update": "npm i $(npm outdated | cut -d' ' -f 1 | sed '1d' | xargs -I '$' echo '$@latest' | xargs echo) --save-exact"
+    "upgrade": "npm i $(npm outdated | cut -d' ' -f 1 | sed '1d' | xargs -I '$' echo '$@latest' | xargs echo) --save-exact"
   },
   "dependencies": {
     "@remotion/cli": "3.3.102",

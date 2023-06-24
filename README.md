@@ -23,7 +23,14 @@ npm run dev
 npm run render
 ```
 
-**Upgrade Remotion**
+**Test**
+
+```sh
+npm run test:lint
+npm run test:types
+```
+
+**Upgrade dependencies**
 
 ```sh
 npm run upgrade
