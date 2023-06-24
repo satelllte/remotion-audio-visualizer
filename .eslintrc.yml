@@ -1,0 +1,18 @@
+plugins:
+  - '@remotion'
+
+extends:
+  - xo
+  - xo-typescript
+  - xo-react
+  - plugin:react/jsx-runtime # Prevents "'React' must be in scope when using JSX" errors
+  - plugin:tailwindcss/recommended
+  - plugin:@remotion/recommended
+
+rules:
+  arrow-body-style: ['error', 'always']
+  react/function-component-definition:
+    - 'error'
+    - namedComponents: 'arrow-function'
+      unnamedComponents: 'arrow-function'
+  '@typescript-eslint/naming-convention': 'off'
