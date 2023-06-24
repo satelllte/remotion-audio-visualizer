@@ -5,20 +5,21 @@
     "dev": "remotion preview",
     "render": "remotion render Main out/video.mp4",
     "upgrade": "remotion upgrade",
-    "test": "xo && tsc"
+    "test": "xo && tsc",
+    "deps:update": "npm i $(npm outdated | cut -d' ' -f 1 | sed '1d' | xargs -I '$' echo '$@latest' | xargs echo) --save-exact"
   },
   "dependencies": {
-    "@remotion/cli": "3.3.101",
+    "@remotion/cli": "3.3.102",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "remotion": "3.3.101"
+    "remotion": "3.3.102"
   },
   "devDependencies": {
-    "@remotion/eslint-config": "3.3.101",
-    "@remotion/eslint-plugin": "3.3.101",
-    "@remotion/tailwind": "3.3.101",
-    "@types/react": "18.2.13",
-    "@types/web": "0.0.101",
+    "@remotion/eslint-config": "3.3.102",
+    "@remotion/eslint-plugin": "3.3.102",
+    "@remotion/tailwind": "3.3.102",
+    "@types/react": "18.2.14",
+    "@types/web": "0.0.102",
     "eslint-config-xo-react": "0.27.0",
     "eslint-config-xo-typescript": "0.57.0",
     "eslint-plugin-tailwindcss": "3.12.1",
