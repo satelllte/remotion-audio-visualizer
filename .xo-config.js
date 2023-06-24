@@ -6,6 +6,7 @@ module.exports = {
   extends: [
     'plugin:@remotion/recommended',
     'plugin:tailwindcss/recommended',
+    'xo-typescript',
     'xo-react',
     'plugin:react/jsx-runtime', // Prevents "'React' must be in scope when using JSX" errors
   ],
