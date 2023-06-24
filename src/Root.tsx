@@ -4,7 +4,7 @@ import {MyComposition} from './Composition';
 
 export const RemotionRoot = () => (
 	<Composition
-		 id='Main'
+		id='Main'
 		component={MyComposition}
 		durationInFrames={60}
 		fps={30}
