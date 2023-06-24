@@ -1,10 +1,10 @@
-import {useCurrentFrame} from 'remotion';
+import {AbsoluteFill, useCurrentFrame} from 'remotion';
 
-export const MyComposition = () => {
+export const Composition = () => {
 	const frame = useCurrentFrame();
 	return (
-		<div className='text-red-500 bg-black p-4'>
-			{`Frame: ${frame}`}
-		</div>
+		<AbsoluteFill className='flex items-center justify-center bg-black text-4xl text-red-500'>
+			{`F ${frame}`}
+		</AbsoluteFill>
 	);
 };

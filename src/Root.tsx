@@ -1,11 +1,11 @@
-import {Composition} from 'remotion';
+import {Composition as RemotionComposition} from 'remotion';
 import './style.css';
-import {MyComposition} from './Composition';
+import {Composition} from './Composition';
 
-export const RemotionRoot = () => (
-	<Composition
+export const Root = () => (
+	<RemotionComposition
 		id='Main'
-		component={MyComposition}
+		component={Composition}
 		durationInFrames={60}
 		fps={30}
 		width={1280}
