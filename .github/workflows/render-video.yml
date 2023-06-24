@@ -1,21 +1,34 @@
 on: workflow_dispatch
 
+env:
+  NODE_VERSION: 18
+
 name: Render video
 jobs:
   render:
     name: Render video
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@main
-      - uses: actions/setup-node@main
-      - run: sudo apt update
-      - run: sudo apt install ffmpeg
-      - run: npm i
-      - run: echo $WORKFLOW_INPUT > input-props.json
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Update Linux packages
+        run: sudo apt update
+      - name: Install FFMpeg dependency on Linux
+        run: sudo apt install ffmpeg
+      - name: Install Node.js dependencies
+        run: npm ci
+      - name: Read workflow input props
+        run: echo $WORKFLOW_INPUT > input-props.json
         env:
           WORKFLOW_INPUT: ${{ toJson(github.event.inputs) }}
-      - run: npm run build -- --props="./input-props.json"
-      - uses: actions/upload-artifact@v3
+      - name: Render video
+        run: npm run render -- --props="./input-props.json"
+      - name: Upload video file artifact
+        uses: actions/upload-artifact@v3
         with:
           name: video.mp4
           path: out/video.mp4
