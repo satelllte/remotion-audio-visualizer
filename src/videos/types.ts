@@ -6,4 +6,5 @@ export type VideoProps = {
 	track: string;
 	textColor: string;
 	backgroundColor: string;
+	waveformColor: string;
 };

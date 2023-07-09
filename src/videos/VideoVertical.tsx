@@ -1,5 +1,5 @@
 import {type VideoProps} from './types';
-import {AudioTrack, Container, Cover, Title} from './components';
+import {AudioTrack, Container, Cover, Title, Waveform} from './components';
 import {useVideoConfig} from 'remotion';
 
 export const VideoVertical = ({
@@ -10,6 +10,7 @@ export const VideoVertical = ({
 	track,
 	textColor,
 	backgroundColor,
+	waveformColor,
 }: VideoProps) => {
 	const {width} = useVideoConfig();
 	const coverSize = Math.round(width * 0.8);
@@ -21,13 +22,21 @@ export const VideoVertical = ({
 				<div className='mx-auto my-[10%]'>
 					<Cover file={coverFile} size={coverSize}/>
 				</div>
-				<Title
-					isCentered
-					artist={artist}
-					track={track}
-					artistFontSize={artistFontSize}
-					trackFontSize={trackFontSize}
-					color={textColor}
+				<div className='mb-[10%]'>
+					<Title
+						isCentered
+						artist={artist}
+						track={track}
+						artistFontSize={artistFontSize}
+						trackFontSize={trackFontSize}
+						color={textColor}
+					/>
+				</div>
+				<Waveform
+					audioFile={audioFile}
+					width={width}
+					height={Math.round(width * 0.2)}
+					color={waveformColor}
 				/>
 			</Container>
 			<AudioTrack file={audioFile} startFrom={audioStartFrom}/>

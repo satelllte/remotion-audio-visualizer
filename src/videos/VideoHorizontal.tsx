@@ -1,5 +1,5 @@
 import {type VideoProps} from './types';
-import {AudioTrack, Container, Cover, Title} from './components';
+import {AudioTrack, Container, Cover, Title, Waveform} from './components';
 import {useVideoConfig} from 'remotion';
 
 export const VideoHorizontal = ({
@@ -10,6 +10,7 @@ export const VideoHorizontal = ({
 	track,
 	textColor,
 	backgroundColor,
+	waveformColor,
 }: VideoProps) => {
 	const {height} = useVideoConfig();
 	const coverSize = Math.round(height * 0.8);
@@ -26,6 +27,14 @@ export const VideoHorizontal = ({
 						artistFontSize={artistFontSize}
 						trackFontSize={trackFontSize}
 						color={textColor}
+					/>
+					{/* eslint-disable-next-line no-warning-comments */}
+					{/* TODO: rotate the waveform 90 degrees */}
+					<Waveform
+						audioFile={audioFile}
+						width={height}
+						height={Math.round(height * 0.1)}
+						color={waveformColor}
 					/>
 				</div>
 			</Container>

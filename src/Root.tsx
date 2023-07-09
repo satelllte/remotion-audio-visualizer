@@ -12,6 +12,7 @@ export const Root = () => {
 	const track = 'DNA.';
 	const textColor = '#d91a2a';
 	const backgroundColor = '#0d0d0d';
+	const waveformColor = textColor;
 	return (
 		<>
 			<Composition
@@ -29,6 +30,7 @@ export const Root = () => {
 					track,
 					textColor,
 					backgroundColor,
+					waveformColor,
 				}}
 			/>
 			{/*
@@ -50,6 +52,7 @@ export const Root = () => {
 					track,
 					textColor,
 					backgroundColor,
+					waveformColor,
 				}}
 			/>
 			<Composition
@@ -67,6 +70,7 @@ export const Root = () => {
 					track,
 					textColor,
 					backgroundColor,
+					waveformColor,
 				}}
 			/>
 			{/*
@@ -88,6 +92,7 @@ export const Root = () => {
 					track,
 					textColor,
 					backgroundColor,
+					waveformColor,
 				}}
 			/>
 		</>
