@@ -1,0 +1,35 @@
+on:
+  workflow_dispatch:
+    inputs:
+      video:
+        description: Video to render
+        required: true
+        type: choice
+        options: 
+        - video-30fps-720p
+        - video-60fps-1080p
+
+env:
+  NODE_VERSION: 18
+
+name: Render
+jobs:
+  render:
+    name: Render - ${{ inputs.video }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Install Node.js dependencies
+        run: npm ci
+      - name: Render
+        run: npm run render:${{ inputs.video }}
+      - name: Upload rendered video artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: out
+          path: out

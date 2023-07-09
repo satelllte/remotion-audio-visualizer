@@ -20,7 +20,7 @@ npm run dev
 **Render video**
 
 ```sh
-npm run render
+npm run render:%VIDEO% # check "render:*" NPM scripts for available videos to render
 ```
 
 **Test**
