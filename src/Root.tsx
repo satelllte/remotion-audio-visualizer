@@ -30,6 +30,18 @@ export const Root = () => {
 				backgroundColor='#000000'
 				waveformColor='#99B8BF'
 			/>
+			<Combination
+				id='crush'
+				durationInSeconds={durationInSeconds}
+				audioFile={staticFile('crush.mp3')}
+				audioStartFromInSeconds={109}
+				coverFile={staticFile('crush.jpg')}
+				artist='Pendulum'
+				track='Crush'
+				textColor='#078C8C'
+				backgroundColor='#0D0D0D'
+				waveformColor='#078C8C'
+			/>
 		</>
 	);
 };
