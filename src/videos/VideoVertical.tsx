@@ -19,10 +19,10 @@ export const VideoVertical = ({
 	return (
 		<>
 			<Container backgroundColor={backgroundColor}>
-				<div className='mx-auto my-[10%]'>
+				<div className='mx-auto my-[10%] mb-[15%]'>
 					<Cover file={coverFile} size={coverSize}/>
 				</div>
-				<div className='mb-[10%]'>
+				<div className='mb-[20%]'>
 					<Title
 						isCentered
 						artist={artist}
