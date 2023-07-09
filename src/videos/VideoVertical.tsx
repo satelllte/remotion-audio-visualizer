@@ -22,7 +22,7 @@ export const VideoVertical = ({
 				<div className='mx-auto my-[10%] mb-[15%]'>
 					<Cover file={coverFile} size={coverSize}/>
 				</div>
-				<div className='mb-[20%]'>
+				<div className='mb-[18%]'>
 					<Title
 						isCentered
 						artist={artist}
@@ -36,9 +36,9 @@ export const VideoVertical = ({
 					audioFile={audioFile}
 					audioStartFrom={audioStartFrom}
 					width={width}
-					height={Math.round(width * 0.2)}
+					height={Math.round(width * 0.25)}
 					color={waveformColor}
-					lineWidth={Math.round(width * 0.0025)}
+					lineWidth={Math.round(width * 0.002)}
 				/>
 			</Container>
 			<AudioTrack file={audioFile} startFrom={audioStartFrom}/>
