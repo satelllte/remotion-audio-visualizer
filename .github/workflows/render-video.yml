@@ -1,4 +1,13 @@
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      video:
+        description: Video to render
+        required: true
+        type: choice
+        options: 
+        - video-30fps-720p
+        - video-60fps-1080p
 
 env:
   NODE_VERSION: 18
@@ -17,14 +26,10 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
       - name: Install Node.js dependencies
         run: npm ci
-      - name: Read workflow input props
-        run: echo $WORKFLOW_INPUT > input-props.json
-        env:
-          WORKFLOW_INPUT: ${{ toJson(github.event.inputs) }}
       - name: Render video
-        run: npm run render -- --props="./input-props.json"
+        run: npm run render:${{ github.event.inputs.video }}
       - name: Upload video file artifact
         uses: actions/upload-artifact@v3
         with:
-          name: video.mp4
-          path: out/video.mp4
+          name: out
+          path: out
