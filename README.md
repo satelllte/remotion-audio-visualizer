@@ -20,7 +20,7 @@ npm run dev
 **Render video**
 
 ```sh
-npm run render:%VIDEO% # check "render:*" NPM scripts for available videos to render
+npm run render --video=ID # The available video ID's can be found in src/Root.tsx file
 ```
 
 **Test**

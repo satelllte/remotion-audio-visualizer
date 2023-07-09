@@ -6,8 +6,10 @@ on:
         required: true
         type: choice
         options: 
-          - video-30fps-720p
-          - video-60fps-1080p
+          - video-horizontal-60fps-1920x1080
+          - video-horizontal-30fps-960x540
+          - video-vertical-60fps-1080x1920
+          - video-vertical-30fps-540x960
 
 env:
   NODE_VERSION: 18
@@ -27,7 +29,7 @@ jobs:
       - name: Install Node.js dependencies
         run: npm ci
       - name: Render
-        run: npm run render:${{ inputs.video }}
+        run: npm run render --video=${{ inputs.video }}
       - name: Upload rendered video artifacts
         uses: actions/upload-artifact@v3
         with:
