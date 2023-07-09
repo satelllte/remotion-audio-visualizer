@@ -9,15 +9,15 @@
     "upgrade": "npm i $(npm outdated | cut -d' ' -f 1 | sed '1d' | xargs -I '$' echo '$@latest' | xargs echo) --save-exact"
   },
   "dependencies": {
-    "@remotion/cli": "3.3.103",
+    "@remotion/cli": "4.0.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "remotion": "3.3.103"
+    "remotion": "4.0.4"
   },
   "devDependencies": {
-    "@remotion/eslint-config": "3.3.103",
-    "@remotion/eslint-plugin": "3.3.103",
-    "@remotion/tailwind": "3.3.103",
+    "@remotion/eslint-config": "4.0.4",
+    "@remotion/eslint-plugin": "4.0.4",
+    "@remotion/tailwind": "4.0.4",
     "@types/react": "18.2.14",
     "@types/web": "0.0.103",
     "eslint": "8.44.0",
