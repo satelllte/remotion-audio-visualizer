@@ -32,6 +32,7 @@ export const VideoHorizontal = ({
 					{/* TODO: rotate the waveform 90 degrees */}
 					<Waveform
 						audioFile={audioFile}
+						audioStartFrom={audioStartFrom}
 						width={height}
 						height={Math.round(height * 0.1)}
 						color={waveformColor}

@@ -34,6 +34,7 @@ export const VideoVertical = ({
 				</div>
 				<Waveform
 					audioFile={audioFile}
+					audioStartFrom={audioStartFrom}
 					width={width}
 					height={Math.round(width * 0.2)}
 					color={waveformColor}
