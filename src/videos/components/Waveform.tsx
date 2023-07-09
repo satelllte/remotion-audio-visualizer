@@ -8,6 +8,7 @@ type WaveformProps = {
 	width: number;
 	height: number;
 	color: string;
+	lineWidth: number;
 	audioFile: string;
 	audioStartFrom: number;
 };
@@ -16,6 +17,7 @@ export const Waveform = ({
 	width,
 	height,
 	color,
+	lineWidth,
 	audioFile,
 	audioStartFrom,
 }: WaveformProps) => {
@@ -34,6 +36,7 @@ export const Waveform = ({
 				width={width}
 				height={height}
 				color={color}
+				lineWidth={lineWidth}
 				audioData={audioData}
 				audioStartFrom={audioStartFrom}
 			/>
@@ -45,6 +48,7 @@ type WaveformCanvasProps = Pick<WaveformProps,
 | 'width'
 | 'height'
 | 'color'
+| 'lineWidth'
 | 'audioStartFrom'
 > & {
 	audioData: AudioData;
@@ -54,6 +58,7 @@ const WaveformCanvas = ({
 	width,
 	height,
 	color,
+	lineWidth,
 	audioStartFrom,
 	audioData,
 }: WaveformCanvasProps) => {
@@ -84,7 +89,7 @@ const WaveformCanvas = ({
 			height,
 			frequencyDataScaled,
 			64, // :visualSamples
-			4, // :lineWidth
+			lineWidth,
 			color,
 			3, // :copies
 			Easing.cubic, // :easing
@@ -95,6 +100,7 @@ const WaveformCanvas = ({
 		width,
 		height,
 		color,
+		lineWidth,
 		frequencyDataScaled,
 		continueRender,
 	]);

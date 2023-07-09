@@ -36,6 +36,7 @@ export const VideoHorizontal = ({
 						width={height}
 						height={Math.round(height * 0.1)}
 						color={waveformColor}
+						lineWidth={Math.round(height * 0.001)}
 					/>
 				</div>
 			</Container>

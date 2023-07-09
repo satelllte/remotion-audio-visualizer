@@ -38,6 +38,7 @@ export const VideoVertical = ({
 					width={width}
 					height={Math.round(width * 0.2)}
 					color={waveformColor}
+					lineWidth={Math.round(width * 0.0025)}
 				/>
 			</Container>
 			<AudioTrack file={audioFile} startFrom={audioStartFrom}/>
