@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "remotion preview",
-    "render": "remotion render Main out/video.mp4",
+    "render:video-30fps-720p": "remotion render video-30fps-720p out/video-30fps-720p.mp4",
+    "render:video-60fps-1080p": "remotion render video-60fps-1080p out/video-60fps-1080p.mp4",
     "test:lint": "eslint src --ext=.ts,.tsx --max-warnings=0 --format=compact",
     "test:types": "tsc",
     "upgrade": "npm i $(npm outdated | cut -d' ' -f 1 | sed '1d' | xargs -I '$' echo '$@latest' | xargs echo) --save-exact"
