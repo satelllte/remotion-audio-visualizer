@@ -30,13 +30,14 @@ export const Waveform = ({
 		);
 	}
 
+	const pixelRatio = 2; // Multiplying sizes by a common Retina display pixel ratio to get higher fidelity render
 	return (
-		<div style={{width, height}}>
+		<div style={{width, height}} className='relative'>
 			<WaveformCanvas
-				width={width}
-				height={height}
+				width={width * pixelRatio}
+				height={height * pixelRatio}
 				color={color}
-				lineWidth={lineWidth}
+				lineWidth={lineWidth * pixelRatio}
 				audioData={audioData}
 				audioStartFrom={audioStartFrom}
 			/>
@@ -110,6 +111,7 @@ const WaveformCanvas = ({
 			ref={canvasRef}
 			width={width}
 			height={height}
+			className='absolute inset-0 h-full w-full'
 		/>
 	);
 };
