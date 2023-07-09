@@ -8,6 +8,9 @@ export const Root = () => {
 	const durationInSeconds = 10;
 	const audioFile = staticFile('dna.mp3');
 	const coverFile = staticFile('dna.jpeg');
+	const artist = 'Kendrick Lamar';
+	const track = 'DNA.';
+	const textColor = '#d91a2a';
 	return (
 		<>
 			<Composition
@@ -21,6 +24,9 @@ export const Root = () => {
 					audioFile,
 					audioStartFrom: 0 * fps60,
 					coverFile,
+					artist,
+					track,
+					textColor,
 				}}
 			/>
 			{/*
@@ -38,6 +44,9 @@ export const Root = () => {
 					audioFile,
 					audioStartFrom: 0 * fps30,
 					coverFile,
+					artist,
+					track,
+					textColor,
 				}}
 			/>
 			<Composition
@@ -51,6 +60,9 @@ export const Root = () => {
 					audioFile,
 					audioStartFrom: 0 * fps60,
 					coverFile,
+					artist,
+					track,
+					textColor,
 				}}
 			/>
 			{/*
@@ -68,6 +80,9 @@ export const Root = () => {
 					audioFile,
 					audioStartFrom: 0 * fps30,
 					coverFile,
+					artist,
+					track,
+					textColor,
 				}}
 			/>
 		</>
