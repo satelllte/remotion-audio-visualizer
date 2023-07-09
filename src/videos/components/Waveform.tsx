@@ -1,6 +1,6 @@
 import {visualizeAudio, useAudioData, type AudioData} from '@remotion/media-utils';
 import {useEffect, useRef} from 'react';
-import {Easing, useCurrentFrame, useVideoConfig} from 'remotion';
+import {Easing, interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
 import {clamp} from '../../utils/math';
 import {useDelayRender} from '../../hooks';
 
@@ -21,8 +21,10 @@ export const Waveform = ({
 	audioFile,
 	audioStartFrom,
 }: WaveformProps) => {
+	const frame = useCurrentFrame();
+	const {fps} = useVideoConfig();
+	const opacity = interpolate(frame, [0, fps], [0, 1], {extrapolateRight: 'clamp'});
 	const audioData = useAudioData(audioFile);
-
 	if (!audioData) {
 		// In development, display red skeleton while audioData is still loading.
 		return (
@@ -32,7 +34,7 @@ export const Waveform = ({
 
 	const pixelRatio = 2; // Multiplying sizes by a common Retina display pixel ratio to get higher fidelity render
 	return (
-		<div style={{width, height}} className='relative'>
+		<div style={{width, height, opacity}} className='relative'>
 			<WaveformCanvas
 				width={width * pixelRatio}
 				height={height * pixelRatio}
