@@ -13,8 +13,8 @@ export const VideoVertical = ({
 }: VideoProps) => {
 	const {width} = useVideoConfig();
 	const coverSize = Math.round(width * 0.8);
-	const trackFontSize = Math.round(width * 0.1);
-	const artistFontSize = Math.round(width * 0.07);
+	const trackFontSize = Math.round(width * 0.104);
+	const artistFontSize = Math.round(width * 0.065);
 	return (
 		<>
 			<Container backgroundColor={backgroundColor}>
