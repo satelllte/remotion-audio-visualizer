@@ -1,7 +1,8 @@
 import {visualizeAudio, useAudioData, type AudioData} from '@remotion/media-utils';
-import {useCallback, useEffect, useRef, useState} from 'react';
-import {Easing, continueRender, delayRender, useCurrentFrame, useVideoConfig} from 'remotion';
+import {useEffect, useRef} from 'react';
+import {Easing, useCurrentFrame, useVideoConfig} from 'remotion';
 import {clamp} from '../../utils/math';
+import {useDelayRender} from '../../hooks';
 
 type WaveformProps = {
 	width: number;
@@ -62,16 +63,7 @@ const WaveformCanvas = ({
 	const frequencyData = visualizeAudio({fps, frame, audioData, numberOfSamples: 512});
 	const frequencyDataScaled = scaleFrequencyData(frequencyData);
 
-	// eslint-disable-next-line no-warning-comments
-	// TODO: create useConst hook to resolve this ESLint error
-	// eslint-disable-next-line react/hook-use-state
-	const [handle] = useState(() => {
-		return delayRender();
-	});
-
-	const onRendered = useCallback(() => {
-		continueRender(handle);
-	}, [handle]);
+	const continueRender = useDelayRender();
 
 	useEffect(() => {
 		if (!canvasRef.current) {
@@ -98,13 +90,13 @@ const WaveformCanvas = ({
 			Easing.cubic, // :easing
 		);
 
-		onRendered();
+		continueRender();
 	}, [
 		width,
 		height,
 		color,
 		frequencyDataScaled,
-		onRendered,
+		continueRender,
 	]);
 
 	return (
