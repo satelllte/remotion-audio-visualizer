@@ -3,19 +3,34 @@ import {Composition, staticFile} from 'remotion';
 import {VideoHorizontal, VideoVertical, type VideoProps} from './videos';
 
 export const Root = () => {
+	const durationInSeconds = 10;
 	return (
-		<Combination
-			id='video'
-			durationInSeconds={10}
-			audioFile={staticFile('dna.mp3')}
-			audioStartFromInSeconds={0}
-			coverFile={staticFile('dna.jpeg')}
-			artist='Kendrick Lamar'
-			track='DNA.'
-			textColor='#d91a2a'
-			backgroundColor='#0d0d0d'
-			waveformColor='#d91a2a'
-		/>
+		<>
+			<Combination
+				id='dna'
+				durationInSeconds={durationInSeconds}
+				audioFile={staticFile('dna.mp3')}
+				audioStartFromInSeconds={0}
+				coverFile={staticFile('dna.jpeg')}
+				artist='Kendrick Lamar'
+				track='DNA.'
+				textColor='#d91a2a'
+				backgroundColor='#0d0d0d'
+				waveformColor='#d91a2a'
+			/>
+			<Combination
+				id='carbonized'
+				durationInSeconds={durationInSeconds}
+				audioFile={staticFile('carbonized.mp3')}
+				audioStartFromInSeconds={70}
+				coverFile={staticFile('carbonized.webp')}
+				artist='Northlane'
+				track='Carbonized'
+				textColor='#99B8BF'
+				backgroundColor='#000000'
+				waveformColor='#99B8BF'
+			/>
+		</>
 	);
 };
 
