@@ -6,8 +6,8 @@ on:
         required: true
         type: choice
         options: 
-        - video-30fps-720p
-        - video-60fps-1080p
+          - video-30fps-720p
+          - video-60fps-1080p
 
 env:
   NODE_VERSION: 18
