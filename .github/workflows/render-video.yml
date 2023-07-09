@@ -15,10 +15,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
-      - name: Update Linux packages
-        run: sudo apt update
-      - name: Install FFMpeg dependency on Linux
-        run: sudo apt install ffmpeg
       - name: Install Node.js dependencies
         run: npm ci
       - name: Read workflow input props
