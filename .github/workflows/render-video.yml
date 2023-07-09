@@ -11,12 +11,11 @@ on:
 
 env:
   NODE_VERSION: 18
-  VIDEO: ${{ github.event.inputs.video }}
 
 name: Render video
 jobs:
   render:
-    name: "Render video - ${{ env.VIDEO }}"
+    name: "Render video - ${{ inputs.video }}"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -28,7 +27,7 @@ jobs:
       - name: Install Node.js dependencies
         run: npm ci
       - name: Render
-        run: npm run render:${{ env.VIDEO }}
+        run: npm run render:${{ inputs.video }}
       - name: Upload rendered video artifacts
         uses: actions/upload-artifact@v3
         with:
