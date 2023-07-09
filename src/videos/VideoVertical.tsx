@@ -9,6 +9,7 @@ export const VideoVertical = ({
 	artist,
 	track,
 	textColor,
+	backgroundColor,
 }: VideoProps) => {
 	const {width} = useVideoConfig();
 	const coverSize = Math.round(width * 0.8);
@@ -16,7 +17,7 @@ export const VideoVertical = ({
 	const artistFontSize = Math.round(width * 0.07);
 	return (
 		<>
-			<Container>
+			<Container backgroundColor={backgroundColor}>
 				<div className='mx-auto my-[10%]'>
 					<Cover file={coverFile} size={coverSize}/>
 				</div>

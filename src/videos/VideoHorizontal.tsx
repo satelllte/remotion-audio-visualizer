@@ -9,6 +9,7 @@ export const VideoHorizontal = ({
 	artist,
 	track,
 	textColor,
+	backgroundColor,
 }: VideoProps) => {
 	const {height} = useVideoConfig();
 	const coverSize = Math.round(height * 0.8);
@@ -16,7 +17,7 @@ export const VideoHorizontal = ({
 	const artistFontSize = Math.round(height * 0.075);
 	return (
 		<>
-			<Container>
+			<Container backgroundColor={backgroundColor}>
 				<div className='m-[5%] flex gap-[5%]'>
 					<Cover file={coverFile} size={coverSize}/>
 					<Title

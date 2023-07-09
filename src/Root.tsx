@@ -11,6 +11,7 @@ export const Root = () => {
 	const artist = 'Kendrick Lamar';
 	const track = 'DNA.';
 	const textColor = '#d91a2a';
+	const backgroundColor = '#0d0d0d';
 	return (
 		<>
 			<Composition
@@ -27,6 +28,7 @@ export const Root = () => {
 					artist,
 					track,
 					textColor,
+					backgroundColor,
 				}}
 			/>
 			{/*
@@ -47,6 +49,7 @@ export const Root = () => {
 					artist,
 					track,
 					textColor,
+					backgroundColor,
 				}}
 			/>
 			<Composition
@@ -63,6 +66,7 @@ export const Root = () => {
 					artist,
 					track,
 					textColor,
+					backgroundColor,
 				}}
 			/>
 			{/*
@@ -83,6 +87,7 @@ export const Root = () => {
 					artist,
 					track,
 					textColor,
+					backgroundColor,
 				}}
 			/>
 		</>

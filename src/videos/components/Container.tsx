@@ -2,15 +2,15 @@ import {AbsoluteFill} from 'remotion';
 import {loadFont} from '@remotion/google-fonts/Inter';
 
 const {fontFamily} = loadFont();
-const style: React.CSSProperties = {fontFamily};
 
 type ContainerProps = {
+	backgroundColor: string;
 	children: React.ReactNode;
 };
 
-export const Container = ({children}: ContainerProps) => {
+export const Container = ({backgroundColor, children}: ContainerProps) => {
 	return (
-		<AbsoluteFill style={style} className='bg-black text-white'>
+		<AbsoluteFill style={{fontFamily, backgroundColor}} className='bg-black text-white'>
 			{children}
 		</AbsoluteFill>
 	);

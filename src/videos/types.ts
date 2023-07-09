@@ -5,4 +5,5 @@ export type VideoProps = {
 	artist: string;
 	track: string;
 	textColor: string;
+	backgroundColor: string;
 };
