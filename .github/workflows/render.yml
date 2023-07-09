@@ -12,10 +12,10 @@ on:
 env:
   NODE_VERSION: 18
 
-name: Render video
+name: Render
 jobs:
   render:
-    name: "Render video - ${{ inputs.video }}"
+    name: Render - ${{ inputs.video }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
