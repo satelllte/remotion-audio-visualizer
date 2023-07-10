@@ -86,17 +86,17 @@ const WaveformCanvas = ({
 
 		ctx.clearRect(0, 0, width, height);
 
-		fillWaveform(
+		fillWaveform({
 			ctx,
 			width,
 			height,
-			frequencyDataScaled,
-			64, // :visualSamples
+			frequencyData: frequencyDataScaled,
+			visualSamples: 64,
 			lineWidth,
 			color,
-			3, // :copies
-			Easing.cubic, // :easing
-		);
+			copies: 3,
+			easing: Easing.cubic,
+		});
 
 		continueRender();
 	}, [
@@ -118,19 +118,27 @@ const WaveformCanvas = ({
 	);
 };
 
-// eslint-disable-next-line no-warning-comments
-// TODO: accept params in object
-const fillWaveform = (
-	ctx: CanvasRenderingContext2D,
-	width: number,
-	height: number,
-	frequencyData: number[],
-	visualSamples: number,
-	lineWidth: number,
-	color: string,
-	copies: number,
-	easing: (x: number) => number,
-): void => { // eslint-disable-line max-params
+const fillWaveform = ({
+	ctx,
+	width,
+	height,
+	frequencyData,
+	visualSamples,
+	lineWidth,
+	color,
+	copies,
+	easing,
+}: {
+	ctx: CanvasRenderingContext2D;
+	width: number;
+	height: number;
+	frequencyData: number[];
+	visualSamples: number;
+	lineWidth: number;
+	color: string;
+	copies: number;
+	easing: (x: number) => number;
+}): void => {
 	const lines = new Array(copies * 2).fill(null).map(() => {
 		return new Path2D();
 	});
