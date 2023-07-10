@@ -2,13 +2,11 @@
 
 Programmatic minimalistic audio visualizations.
 
+<img width="250" src="./docs/carbonized-vertical-50fps-1080x1920.gif">
+<img width="250" src="./docs/carbonized-vertical-50fps-1080x1920.gif">
+<img width="250" src="./docs/carbonized-vertical-50fps-1080x1920.gif">
 <img src="./docs/dna-horizontal-50fps-1920x1080.gif">
-
-<img src="./docs/carbonized-horizontal-60fps-1920x1080.png">
-
 <img src="./docs/crush-horizontal-60fps-1920x1080.png">
-
-<video src="./docs/dna-horizontal-60fps-1920x1080.mp4">
 
 ## Development
 
