@@ -1,6 +1,14 @@
 # Remotion Audio Visualizer
 
-A playground for programmatic audio visualizations. 
+Programmatic minimalistic audio visualizations.
+
+<img src="./docs/dna-horizontal-50fps-1920x1080.gif">
+
+<img src="./docs/carbonized-horizontal-60fps-1920x1080.png">
+
+<img src="./docs/crush-horizontal-60fps-1920x1080.png">
+
+<video src="./docs/dna-horizontal-60fps-1920x1080.mp4">
 
 ## Development
 
