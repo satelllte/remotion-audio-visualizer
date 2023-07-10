@@ -20,7 +20,7 @@ npm run dev
 **Render video**
 
 ```sh
-npm run render --video=ID # The available video ID's can be found in src/Root.tsx file
+npm run render --video=ID # Available video ID's can be found in src/Root.tsx file
 ```
 
 **Test**
