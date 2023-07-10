@@ -28,7 +28,9 @@ npm run dev
 **Render video**
 
 ```sh
-npm run render --video=ID # Available video ID's can be found in src/Root.tsx file
+# Available video ID's can be found in src/Root.tsx file
+npm run render:mp4 --video=ID
+npm run render:gif --video=ID
 ```
 
 **Test**

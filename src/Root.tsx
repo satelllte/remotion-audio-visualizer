@@ -83,6 +83,13 @@ const Combination = ({
 				{...resolveForFPS(60)}
 			/>
 			<Composition
+				id={`${id}-horizontal-50fps-1920x1080`}
+				component={VideoHorizontal}
+				width={1920}
+				height={1080}
+				{...resolveForFPS(50)}
+			/>
+			<Composition
 				id={`${id}-horizontal-30fps-960x540`}
 				component={VideoHorizontal}
 				width={960}
@@ -95,6 +102,13 @@ const Combination = ({
 				width={1080}
 				height={1920}
 				{...resolveForFPS(60)}
+			/>
+			<Composition
+				id={`${id}-vertical-50fps-1080x1920`}
+				component={VideoVertical}
+				width={1080}
+				height={1920}
+				{...resolveForFPS(50)}
 			/>
 			<Composition
 				id={`${id}-vertical-30fps-540x960`}

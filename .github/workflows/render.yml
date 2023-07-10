@@ -1,23 +1,32 @@
 on:
   workflow_dispatch:
     inputs:
-      video:
-        description: Video to render
+      format:
+        description: Output video format to render
         required: true
         type: choice
         options: 
-          - dna-horizontal-60fps-1920x1080
-          - dna-horizontal-30fps-960x540
-          - dna-vertical-60fps-1080x1920
-          - dna-vertical-30fps-540x960
-          - carbonized-horizontal-60fps-1920x1080
-          - carbonized-horizontal-30fps-960x540
-          - carbonized-vertical-60fps-1080x1920
-          - carbonized-vertical-30fps-540x960
-          - crush-horizontal-60fps-1920x1080
-          - crush-horizontal-30fps-960x540
-          - crush-vertical-60fps-1080x1920
-          - crush-vertical-30fps-540x960
+          - mp4
+          - gif
+      name:
+        description: Video name to render
+        required: true
+        type: choice
+        options: 
+          - dna
+          - carbonized
+          - crush
+      variant:
+        description: Video variant to render
+        required: true
+        type: choice
+        options: 
+          - horizontal-60fps-1920x1080
+          - horizontal-50fps-1920x1080
+          - horizontal-30fps-960x540
+          - vertical-60fps-1080x1920
+          - vertical-50fps-1080x1920
+          - vertical-30fps-540x960
 
 env:
   NODE_VERSION: 18
@@ -25,7 +34,7 @@ env:
 name: Render
 jobs:
   render:
-    name: Render - ${{ inputs.video }}
+    name: Render - ${{ inputs.name }}-${{ inputs.variant }}.${{ inputs.format }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -37,7 +46,7 @@ jobs:
       - name: Install Node.js dependencies
         run: npm ci
       - name: Render
-        run: npm run render --video=${{ inputs.video }}
+        run: npm run render:${{ inputs.format }} --video=${{ inputs.name }}-${{ inputs.variant }}
       - name: Upload rendered video artifacts
         uses: actions/upload-artifact@v3
         with:
