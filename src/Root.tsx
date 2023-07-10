@@ -70,7 +70,7 @@ const Combination = ({
 	};
 
 	/**
-	 * To make sure the compositions are 100% FPS & resolution independent, we include its low-res version here.
+	 * To make sure the compositions are 100% FPS & resolution independent, we include their low-res versions here as well.
 	 * Additionally, it might help with development on slower computers.
 	 */
 	return (
