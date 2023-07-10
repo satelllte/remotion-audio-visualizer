@@ -2,6 +2,8 @@
 
 Programmatic minimalistic audio visualizations.
 
+## Previews
+
 <p float="left">
   <img width="250" src="./docs/dna-vertical-50fps-1080x1920.gif">
   <img width="250" src="./docs/carbonized-vertical-50fps-1080x1920.gif">
