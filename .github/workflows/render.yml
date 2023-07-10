@@ -6,10 +6,18 @@ on:
         required: true
         type: choice
         options: 
-          - video-horizontal-60fps-1920x1080
-          - video-horizontal-30fps-960x540
-          - video-vertical-60fps-1080x1920
-          - video-vertical-30fps-540x960
+          - dna-horizontal-60fps-1920x1080
+          - dna-horizontal-30fps-960x540
+          - dna-vertical-60fps-1080x1920
+          - dna-vertical-30fps-540x960
+          - carbonized-horizontal-60fps-1920x1080
+          - carbonized-horizontal-30fps-960x540
+          - carbonized-vertical-60fps-1080x1920
+          - carbonized-vertical-30fps-540x960
+          - crush-horizontal-60fps-1920x1080
+          - crush-horizontal-30fps-960x540
+          - crush-vertical-60fps-1080x1920
+          - crush-vertical-30fps-540x960
 
 env:
   NODE_VERSION: 18
