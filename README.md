@@ -13,6 +13,10 @@ Programmatic minimalistic audio visualizations.
 <img src="./docs/carbonized-horizontal-30fps-960x540.gif">
 <img src="./docs/crush-horizontal-30fps-960x540.gif">
 
+## Useful to know
+
+This project is using the [Remotion Template](https://github.com/satelllte/remotion-template) with some good defaults that I use for all of my videos. So, check it out and feel free to use it to craft your own videos with Remotion.
+
 ## Development
 
 **Install dependencies**
