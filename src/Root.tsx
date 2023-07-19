@@ -2,7 +2,7 @@ import './style.css';
 import {Composition, staticFile} from 'remotion';
 import {VideoHorizontal, VideoVertical, type VideoProps} from './videos';
 
-export const Root = () => {
+export function Root() {
 	const durationInSeconds = 10;
 	return (
 		<>
@@ -44,7 +44,7 @@ export const Root = () => {
 			/>
 		</>
 	);
-};
+}
 
 type CombinationProps = Omit<VideoProps, 'audioStartFrom'> & {
 	audioStartFromInSeconds: number;
@@ -52,22 +52,20 @@ type CombinationProps = Omit<VideoProps, 'audioStartFrom'> & {
 	durationInSeconds: number;
 };
 
-const Combination = ({
+function Combination({
 	audioStartFromInSeconds,
 	id,
 	durationInSeconds,
 	...restProps
-}: CombinationProps) => {
-	const resolveForFPS = (fps: number) => {
-		return {
-			fps,
-			durationInFrames: durationInSeconds * fps,
-			defaultProps: {
-				...restProps,
-				audioStartFrom: audioStartFromInSeconds * fps,
-			},
-		};
-	};
+}: CombinationProps) {
+	const resolveForFps = (fps: number) => ({
+		fps,
+		durationInFrames: durationInSeconds * fps,
+		defaultProps: {
+			...restProps,
+			audioStartFrom: audioStartFromInSeconds * fps,
+		},
+	});
 
 	/**
 	 * To make sure the compositions are 100% FPS & resolution independent, we include their low-res versions here as well.
@@ -80,43 +78,43 @@ const Combination = ({
 				component={VideoHorizontal}
 				width={1920}
 				height={1080}
-				{...resolveForFPS(60)}
+				{...resolveForFps(60)}
 			/>
 			<Composition
 				id={`${id}-horizontal-50fps-1920x1080`}
 				component={VideoHorizontal}
 				width={1920}
 				height={1080}
-				{...resolveForFPS(50)}
+				{...resolveForFps(50)}
 			/>
 			<Composition
 				id={`${id}-horizontal-30fps-960x540`}
 				component={VideoHorizontal}
 				width={960}
 				height={540}
-				{...resolveForFPS(30)}
+				{...resolveForFps(30)}
 			/>
 			<Composition
 				id={`${id}-vertical-60fps-1080x1920`}
 				component={VideoVertical}
 				width={1080}
 				height={1920}
-				{...resolveForFPS(60)}
+				{...resolveForFps(60)}
 			/>
 			<Composition
 				id={`${id}-vertical-50fps-1080x1920`}
 				component={VideoVertical}
 				width={1080}
 				height={1920}
-				{...resolveForFPS(50)}
+				{...resolveForFps(50)}
 			/>
 			<Composition
 				id={`${id}-vertical-30fps-540x960`}
 				component={VideoVertical}
 				width={540}
 				height={960}
-				{...resolveForFPS(30)}
+				{...resolveForFps(30)}
 			/>
 		</>
 	);
-};
+}

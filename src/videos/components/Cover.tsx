@@ -6,19 +6,17 @@ type CoverProps = {
 	size: number;
 };
 
-export const Cover = ({
+export function Cover({
 	file,
 	size,
-}: CoverProps) => {
+}: CoverProps) {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 	const progress = interpolate(frame, [0, 2 * fps], [0, 1], {easing: Easing.out(Easing.poly(5)), extrapolateRight: 'clamp'});
-	const style = useMemo<React.CSSProperties>(() => {
-		return {
-			opacity: progress,
-			transform: `translateY(${(1 - progress) * 20}%)`,
-		};
-	}, [progress]);
+	const style = useMemo<React.CSSProperties>(() => ({
+		opacity: progress,
+		transform: `translateY(${(1 - progress) * 20}%)`,
+	}), [progress]);
 	return (
 		<Img
 			src={file}
@@ -27,4 +25,4 @@ export const Cover = ({
 			style={style}
 		/>
 	);
-};
+}

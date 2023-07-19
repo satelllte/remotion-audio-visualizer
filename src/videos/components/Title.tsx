@@ -10,14 +10,14 @@ type TitleProps = {
 	color: string;
 };
 
-export const Title = ({
+export function Title({
 	isCentered,
 	track,
 	artist,
 	trackFontSize,
 	artistFontSize,
 	color,
-}: TitleProps) => {
+}: TitleProps) {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 	const delay = 0.5 * fps;
@@ -29,4 +29,4 @@ export const Title = ({
 			<h2 style={{fontSize: artistFontSize}} className='font-light'>{artist}</h2>
 		</div>
 	);
-};
+}

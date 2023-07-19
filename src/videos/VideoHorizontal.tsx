@@ -2,7 +2,7 @@ import {type VideoProps} from './types';
 import {AudioTrack, Container, Cover, Title, Waveform} from './components';
 import {useVideoConfig} from 'remotion';
 
-export const VideoHorizontal = ({
+export function VideoHorizontal({
 	audioFile,
 	audioStartFrom,
 	coverFile,
@@ -11,24 +11,22 @@ export const VideoHorizontal = ({
 	textColor,
 	backgroundColor,
 	waveformColor,
-}: VideoProps) => {
+}: VideoProps) {
 	const {width, height} = useVideoConfig();
 	const coverSize = Math.round(height * 0.8);
 	const trackFontSize = Math.round(height * 0.1);
 	const artistFontSize = Math.round(height * 0.075);
 
-	const renderWaveform = () => {
-		return (
-			<Waveform
-				audioFile={audioFile}
-				audioStartFrom={audioStartFrom}
-				width={Math.round(width)}
-				height={Math.round(height * 0.8)}
-				color={waveformColor}
-				lineWidth={Math.round(height * 0.0012)}
-			/>
-		);
-	};
+	const renderWaveform = () => (
+		<Waveform
+			audioFile={audioFile}
+			audioStartFrom={audioStartFrom}
+			width={Math.round(width)}
+			height={Math.round(height * 0.8)}
+			color={waveformColor}
+			lineWidth={Math.round(height * 0.0012)}
+		/>
+	);
 
 	return (
 		<>
@@ -55,4 +53,4 @@ export const VideoHorizontal = ({
 			<AudioTrack file={audioFile} startFrom={audioStartFrom}/>
 		</>
 	);
-};
+}

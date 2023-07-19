@@ -13,14 +13,14 @@ type WaveformProps = {
 	audioStartFrom: number;
 };
 
-export const Waveform = ({
+export function Waveform({
 	width,
 	height,
 	color,
 	lineWidth,
 	audioFile,
 	audioStartFrom,
-}: WaveformProps) => {
+}: WaveformProps) {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 	const opacity = interpolate(frame, [0, fps], [0, 1], {extrapolateRight: 'clamp'});
@@ -45,7 +45,7 @@ export const Waveform = ({
 			/>
 		</div>
 	);
-};
+}
 
 type WaveformCanvasProps = Pick<WaveformProps,
 | 'width'
@@ -57,14 +57,14 @@ type WaveformCanvasProps = Pick<WaveformProps,
 	audioData: AudioData;
 };
 
-const WaveformCanvas = ({
+function WaveformCanvas({
 	width,
 	height,
 	color,
 	lineWidth,
 	audioStartFrom,
 	audioData,
-}: WaveformCanvasProps) => {
+}: WaveformCanvasProps) {
 	const frame = audioStartFrom + useCurrentFrame();
 	const {fps} = useVideoConfig();
 	const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -116,7 +116,7 @@ const WaveformCanvas = ({
 			className='absolute inset-0 h-full w-full'
 		/>
 	);
-};
+}
 
 const fillWaveform = ({
 	ctx,
@@ -139,9 +139,7 @@ const fillWaveform = ({
 	copies: number;
 	easing: (x: number) => number;
 }): void => {
-	const lines = new Array(copies * 2).fill(null).map(() => {
-		return new Path2D();
-	});
+	const lines = new Array(copies * 2).fill(null).map(() => new Path2D());
 
 	for (let i = 0; i < visualSamples; i++) {
 		const value = clamp(frequencyData[i], 0, 1);
