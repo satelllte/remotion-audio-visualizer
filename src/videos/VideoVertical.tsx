@@ -2,7 +2,7 @@ import {type VideoProps} from './types';
 import {AudioTrack, Container, Cover, Title, Waveform} from './components';
 import {useVideoConfig} from 'remotion';
 
-export const VideoVertical = ({
+export function VideoVertical({
 	audioFile,
 	audioStartFrom,
 	coverFile,
@@ -11,7 +11,7 @@ export const VideoVertical = ({
 	textColor,
 	backgroundColor,
 	waveformColor,
-}: VideoProps) => {
+}: VideoProps) {
 	const {width} = useVideoConfig();
 	const coverSize = Math.round(width * 0.8);
 	const trackFontSize = Math.round(width * 0.104);
@@ -44,4 +44,4 @@ export const VideoVertical = ({
 			<AudioTrack file={audioFile} startFrom={audioStartFrom}/>
 		</>
 	);
-};
+}

@@ -8,16 +8,16 @@ type ContainerProps = {
 	children: React.ReactNode;
 };
 
-export const Container = ({backgroundColor, children}: ContainerProps) => {
+export function Container({backgroundColor, children}: ContainerProps) {
 	return (
 		<AbsoluteFill style={{fontFamily, backgroundColor}} className='bg-black text-white'>
 			{children}
 			<FadeOut/>
 		</AbsoluteFill>
 	);
-};
+}
 
-const FadeOut = () => {
+function FadeOut() {
 	const frame = useCurrentFrame();
 	const {fps, durationInFrames: durationTotal} = useVideoConfig();
 	const durationFx = fps;
@@ -25,4 +25,4 @@ const FadeOut = () => {
 	return (
 		<AbsoluteFill className='bg-black' style={{opacity}}/>
 	);
-};
+}

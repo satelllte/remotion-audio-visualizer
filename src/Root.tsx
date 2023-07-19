@@ -2,7 +2,7 @@ import './style.css';
 import {Composition, staticFile} from 'remotion';
 import {VideoHorizontal, VideoVertical, type VideoProps} from './videos';
 
-export const Root = () => {
+export function Root() {
 	const durationInSeconds = 10;
 	return (
 		<>
@@ -44,7 +44,7 @@ export const Root = () => {
 			/>
 		</>
 	);
-};
+}
 
 type CombinationProps = Omit<VideoProps, 'audioStartFrom'> & {
 	audioStartFromInSeconds: number;
@@ -52,22 +52,20 @@ type CombinationProps = Omit<VideoProps, 'audioStartFrom'> & {
 	durationInSeconds: number;
 };
 
-const Combination = ({
+function Combination({
 	audioStartFromInSeconds,
 	id,
 	durationInSeconds,
 	...restProps
-}: CombinationProps) => {
-	const resolveForFPS = (fps: number) => {
-		return {
-			fps,
-			durationInFrames: durationInSeconds * fps,
-			defaultProps: {
-				...restProps,
-				audioStartFrom: audioStartFromInSeconds * fps,
-			},
-		};
-	};
+}: CombinationProps) {
+	const resolveForFPS = (fps: number) => ({
+		fps,
+		durationInFrames: durationInSeconds * fps,
+		defaultProps: {
+			...restProps,
+			audioStartFrom: audioStartFromInSeconds * fps,
+		},
+	});
 
 	/**
 	 * To make sure the compositions are 100% FPS & resolution independent, we include their low-res versions here as well.
@@ -119,4 +117,4 @@ const Combination = ({
 			/>
 		</>
 	);
-};
+}
