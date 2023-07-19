@@ -58,7 +58,7 @@ function Combination({
 	durationInSeconds,
 	...restProps
 }: CombinationProps) {
-	const resolveForFPS = (fps: number) => ({
+	const resolveForFps = (fps: number) => ({
 		fps,
 		durationInFrames: durationInSeconds * fps,
 		defaultProps: {
@@ -78,42 +78,42 @@ function Combination({
 				component={VideoHorizontal}
 				width={1920}
 				height={1080}
-				{...resolveForFPS(60)}
+				{...resolveForFps(60)}
 			/>
 			<Composition
 				id={`${id}-horizontal-50fps-1920x1080`}
 				component={VideoHorizontal}
 				width={1920}
 				height={1080}
-				{...resolveForFPS(50)}
+				{...resolveForFps(50)}
 			/>
 			<Composition
 				id={`${id}-horizontal-30fps-960x540`}
 				component={VideoHorizontal}
 				width={960}
 				height={540}
-				{...resolveForFPS(30)}
+				{...resolveForFps(30)}
 			/>
 			<Composition
 				id={`${id}-vertical-60fps-1080x1920`}
 				component={VideoVertical}
 				width={1080}
 				height={1920}
-				{...resolveForFPS(60)}
+				{...resolveForFps(60)}
 			/>
 			<Composition
 				id={`${id}-vertical-50fps-1080x1920`}
 				component={VideoVertical}
 				width={1080}
 				height={1920}
-				{...resolveForFPS(50)}
+				{...resolveForFps(50)}
 			/>
 			<Composition
 				id={`${id}-vertical-30fps-540x960`}
 				component={VideoVertical}
 				width={540}
 				height={960}
-				{...resolveForFPS(30)}
+				{...resolveForFps(30)}
 			/>
 		</>
 	);
