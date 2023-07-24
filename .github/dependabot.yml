@@ -4,16 +4,16 @@
 # https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
 version: 2
 updates:
-  - package-ecosystem: "npm"
-    directory: "/"
+  - package-ecosystem: 'npm'
+    directory: '/'
     schedule:
-      interval: "monthly"
+      interval: 'monthly'
     commit-message:
-      prefix: "[skip ci] npm"
+      prefix: '[skip ci] npm'
 
-  - package-ecosystem: "github-actions"
-    directory: "/"
+  - package-ecosystem: 'github-actions'
+    directory: '/'
     schedule:
-      interval: "monthly"
+      interval: 'monthly'
     commit-message:
-      prefix: "[skip ci] github-actions"
+      prefix: '[skip ci] github-actions'

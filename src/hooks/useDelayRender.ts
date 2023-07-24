@@ -15,8 +15,8 @@ import {useConst} from './useConst';
  * ```
  */
 export const useDelayRender = (label?: string) => {
-	const handle = useConst(() => delayRender(label));
-	return useCallback(() => {
-		continueRender(handle);
-	}, [handle]);
+  const handle = useConst(() => delayRender(label));
+  return useCallback(() => {
+    continueRender(handle);
+  }, [handle]);
 };
