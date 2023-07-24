@@ -27,3 +27,5 @@ jobs:
         run: npm run test:lint
       - name: Test types
         run: npm run test:types
+      - name: Test formatting
+        run: npm run test:format
