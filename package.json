@@ -5,7 +5,7 @@
     "dev": "remotion preview",
     "render:mp4": "remotion render ${npm_config_video} out/${npm_config_video}.mp4",
     "render:gif": "remotion render ${npm_config_video} out/${npm_config_video}.gif",
-    "test:lint": "eslint src --ext=.ts,.tsx --max-warnings=0 --format=compact",
+    "test:lint": "eslint . --ext=.ts,.tsx --max-warnings=0 --format=compact",
     "test:types": "tsc",
     "test:format": "prettier --check .",
     "upgrade": "npm i $(npm outdated | cut -d' ' -f 1 | sed '1d' | xargs -I '$' echo '$@latest' | xargs echo) --save-exact"
