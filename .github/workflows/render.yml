@@ -5,14 +5,14 @@ on:
         description: Output video format to render
         required: true
         type: choice
-        options: 
+        options:
           - mp4
           - gif
       name:
         description: Video name to render
         required: true
         type: choice
-        options: 
+        options:
           - dna
           - carbonized
           - crush
@@ -20,7 +20,7 @@ on:
         description: Video variant to render
         required: true
         type: choice
-        options: 
+        options:
           - horizontal-60fps-1920x1080
           - horizontal-50fps-1920x1080
           - horizontal-30fps-960x540
