@@ -28,9 +28,6 @@ on:
           - vertical-50fps-1080x1920
           - vertical-30fps-540x960
 
-env:
-  NODE_VERSION: 18
-
 name: Render
 jobs:
   render:
@@ -42,7 +39,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ env.NODE_VERSION }}
+          node-version-file: '.nvmrc'
       - name: Install Node.js dependencies
         run: npm ci
       - name: Render
